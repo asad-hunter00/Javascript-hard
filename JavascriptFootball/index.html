@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <h1 class="team-title">Uzbekistan</h1>
+            <p>3-4-2-1 Formation · Max 11 players</p>
+        </div>
+
+        <div class="action">
+            <button class="edit-team">Edit Team</button>
+            <button class="premier">Add players</button>
+        </div>
+    </div>
+
+    <div class="players-icon">
+
+        <div class="player-border st">
+            <div class="player">ST</div>
+            <p></p>
+        </div>
+
+        <div class="player-border aml">
+            <div class="player">AML</div>
+            <p></p>
+        </div>
+
+        <div class="player-border amr">
+            <div class="player">AMR</div>
+            <p></p>
+        </div>
+
+        <div class="player-border cml">
+            <div class="player">CML</div>
+            <p></p>
+        </div>
+
+        <div class="player-border cmcl">
+            <div class="player">CMCL</div>
+            <p></p>
+        </div>
+
+        <div class="player-border cmcr">
+            <div class="player">CMCR</div>
+            <p></p>
+        </div>
+
+        <div class="player-border cmr">
+            <div class="player">CMR</div>
+            <p></p>
+        </div>
+
+        <div class="player-border cbl">
+            <div class="player">CBL</div>
+            <p></p>
+        </div>
+
+        <div class="player-border cbc">
+            <div class="player">CBC</div>
+            <p></p>
+        </div>
+
+        <div class="player-border cbr">
+            <div class="player">CBR</div>
+            <p></p>
+        </div>
+
+        <div class="player-border gk">
+            <div class="player">GK</div>
+            <p></p>
+        </div>
+
+    </div>
+
+    <div class="modal hidden">
+        <div class="modal-content">
+            <h2>Edit Team</h2>
+
+            <label for="teamName">Team name</label>
+            <input type="text" id="teamName">
+
+            <div class="modal-buttons">
+                <button id="cancel-btn">Cancel</button>
+                <button id="saveBtn">Save</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="player-modal hidden">
+        <div class="modal-content">
+            <h1 id="playerModalTitle">Add Player</h1>
+
+            <input type="text" id="player-name" placeholder="Player Name">
+            <input type="number" id="player-num" placeholder="Player Number">
+
+            <select id="player-position">
+                <option value="st">ST</option>
+                <option value="aml">AML</option>
+                <option value="amr">AMR</option>
+                <option value="cml">CML</option>
+                <option value="cmcl">CMCL</option>
+                <option value="cmcr">CMCR</option>
+                <option value="cmr">CMR</option>
+                <option value="cbl">CBL</option>
+                <option value="cbc">CBC</option>
+                <option value="cbr">CBR</option>
+                <option value="gk">GK</option>
+            </select>
+
+            <input type="text" id="avatar-url" placeholder="Avatar URL">
+            <input type="text" id="logo-url" placeholder="Logo URL">
+
+            <div class="modal-buttons">
+                
+                <div>
+                    <button id="playerDelete" class="delete-btn hidden">Delete</button>
+                    <button id="playerCancel">Cancel</button>
+                    <button id="playerSave">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

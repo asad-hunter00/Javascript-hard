@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #0f172a;
+    font-family: sans-serif;
+    color: white;
+    min-height: 100vh;
+}
+
+
+.header {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto 65px;
+    margin-top: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+
+.action {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.action button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #374151;
+    color: white;
+}
+
+.premier {
+    background: #2563eb !important;
+}
+
+.players-icon {
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    margin: 20px auto;
+    background: #1f8b3f;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.player-border {
+    position: absolute;
+    text-align: center;
+}
+
+.player {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #d1d5db;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: #111827;
+    cursor: pointer;
+    align-items: center;
+}
+
+.player-border p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+
+.st {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.aml {
+    top: 140px;
+    left: 35%;
+}
+
+.amr {
+    top: 140px;
+    right: 35%;
+}
+
+
+.cml {
+    top: 270px;
+    left: 15%;
+}
+
+.cmcl {
+    top: 270px;
+    left: 38%;
+}
+
+.cmcr {
+    top: 270px;
+    right: 38%;
+}
+
+.cmr {
+    top: 270px;
+    right: 15%;
+}
+
+
+.cbl {
+    top: 450px;
+    left: 25%;
+}
+
+.cbc {
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cbr {
+    top: 450px;
+    right: 25%;
+}
+
+
+.gk {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* h1 text name */
+
+.modal-content {
+    width: 450px;
+    background: #3e4c62;
+    padding: 25px;
+    border-radius: 16px;    
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #435065;
+    background: #111827;
+    color: white;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-buttons button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#saveBtn {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* create player modal */
+
+
+.player-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.player {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #d1d5db;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.number-badge {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    color: black;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 50%;
+    border: 2px solid #16a34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.club-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #16a34a;
+    z-index: 1;
+}
+
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.player-modal input,
+.player-modal select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    background: #111827;
+    color: white;
+    outline: none;
+}
+
+.player-modal input:focus,
+.player-modal select:focus {
+    border-color: #2563eb;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.player-modal h2 {
+    margin-bottom: 15px;
+}
