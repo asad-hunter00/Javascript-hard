@@ -1,0 +1,27 @@
+edit id ga
+
+
+const player = team.players.find(
+        item => item.id === editId
+    );
+
+
+deletega
+
+
+     team.players = team.players.filter(
+        item => item.id !== editId
+    );
+
+
+add player btn ga
+
+    editId = null;
+
+playerName.value = "";
+playerNum.value = "";
+playerPosition.value = "";
+
+playerModalTitle.textContent = "Add Player";
+
+playerDelete.classList.add("hidden");
