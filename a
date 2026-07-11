@@ -24,4 +24,20 @@ playerPosition.value = "";
 
 playerModalTitle.textContent = "Add Player";
 
-playerDelete.classList.add("hidden");
+playerDelete.classList.add("hidden");\
+
+
+
+
+
+
+
+
+
+
+
+
+
+for (let i = arr.length - 1; i >= 0; i--) {
+    console.log(arr[i]);
+}
