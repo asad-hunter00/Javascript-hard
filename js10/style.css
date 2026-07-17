@@ -1,0 +1,47 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif
+}
+
+#movie-list li{
+    margin: 10px 0;
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #eee;
+    border-radius: 4px;
+
+}
+
+
+header {
+    text-align: center;
+    background: #f2f2f2;
+    padding: 20px 0;
+}
+
+#recommended-list li{
+    margin: 10px 0;
+    padding: 10px;
+    list-style: none;
+    background-color: lightblue;
+}
+
+.wrapper{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.watched {
+    border-left: 4px solid green;
+    background: #e8f7e8;
+    width: 95%;
+}
+
+
+.not-watched {
+    border-left: 4px solid orange;
+    background: #fff4df;
+     width: 95%;
+}
