@@ -1,0 +1,86 @@
+My Book Shelf
+
+
+🎯 Ma'lumot tuzilishi
+
+Har bir kitob quyidagi ko'rinishda bo'lsin:
+
+{
+id,
+title,
+author,
+finished: false
+}
+Kamida 6 ta kitob yarating.
+
+✅ Ba'zilari:
+
+finished: true
+✅ Ba'zilari:
+
+finished: false
+
+1️⃣ Kitoblarni sahifaga chiqarish
+
+JavaScript yordamida kitoblarni <ul> ichiga chiqaring.
+
+Har bir kitob quyidagilarni ko'rsatsin:
+
+* 📖 Kitob nomi
+* ✍️ Muallifi
+* ☑️ Checkbox
+* 🗑 Delete tugmasi
+
+⚠️ Ishlatilishi shart:
+
+* createElement()
+* append()
+
+
+2️⃣ Kitob qo'shish formasi
+
+Forma quyidagi inputlardan iborat bo'lsin:
+
+* Book Title
+* Author
+
+
+3️⃣ Checkbox
+
+Checkbox o'zgarganda (`change` event):
+
+finished qiymati almashsin.
+
+Masalan:
+
+false → true
+true → false
+finished bo'lgan kitoblar uchun CSS class qo'shing.
+
+
+4️⃣ Delete
+
+Delete tugmasi bosilganda avval:
+
+confirm("Remove this book?")
+chiqsin.
+
+Agar foydalanuvchi:
+
+✅ OK bossa → kitob o'chirilsin.
+
+❌ Cancel bossa → hech narsa o'zgarmasin.
+
+
+5️⃣ Empty State
+
+Agar kitoblar qolmasa, sahifada quyidagi xabar chiqsin:
+
+Your shelf is empty. Add a book.
+
+6️⃣ Summary
+
+Sahifaning yuqorisida yoki pastida quyidagini ko'rsating:
+
+Total: X | Finished: Y | To read: Z
+⚠️ Bu sonlar avtomatik hisoblanishi kerak.          mana shu mashqlarni menga tushuntirib ber bosqichma bosqich qilaylik shuni       birinchi nimadan boshlaymiz html js  
