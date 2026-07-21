@@ -1,4 +1,4 @@
-const books = [
+let books = [
   {
     id: 1,
     title: "Odam Bo'lish Qiyin",
@@ -46,12 +46,22 @@ const message = document.getElementById("message");
 const list = document.getElementById("list");
 
 function renderFunc() {
+
   list.innerHTML = "";
+
+  if (books.length === 0) {
+    message.textContent = "Your shelf is empty.Add a book."
+
+  }
 
   for (let i = 0; i < books.length; i++) {
     const book = books[i];
 
     const li = document.createElement("li");
+
+    if (book.finished) {
+      li.classList.add("finished")
+    }
 
     const titleP = document.createElement("p");
     titleP.textContent = ` ${book.title}`;
@@ -59,17 +69,47 @@ function renderFunc() {
     const authorP = document.createElement("p");
     authorP.textContent = ` ${book.author}`;
 
+    const input = document.createElement("input")
+    input.type = "checkbox"
+    input.checked = book.finished
+
+    input.addEventListener("change", () => {
+      book.finished = !book.finished;
+
+      renderFunc();
+      form.reset()
+    });
+
+
+    const button = document.createElement("button")
+    button.textContent = "Delete"
+
+    button.addEventListener("click", () => {
+      const gt = confirm("Remove this book?")
+
+      
+
+      if (gt) {
+        books = books.filter(item => item.id !== book.id)
+        renderFunc()
+      }
+    })
+
+
+
     li.append(titleP);
     li.append(authorP);
+    li.append(input)
+    li.append(button)
 
     list.appendChild(li);
   }
 
-  input.addEventListener("change", () => {
-    book.finished = !book.finished;
 
-    renderFunc();
-  });
+
+summaryNew()
+
+
 }
 
 renderFunc();
@@ -85,3 +125,16 @@ form.addEventListener("submit", (e) => {
 
   books.push(addBook);
 });
+
+
+
+function summaryNew() {
+  const total = books.length
+
+    const finished = books.filter(item => item.finished).length
+
+    const toRead = total - finished;
+
+    summary.textContent =
+        `Total: ${total} | Finished: ${finished} | To read: ${toRead}`;
+}

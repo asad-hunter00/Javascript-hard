@@ -1,15 +1,67 @@
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-ul {
-    padding: 40px;
+body {
+    max-width: 700px;
+    margin: 30px auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
 
+#summary {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#shelf {
     display: flex;
-        flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
+#title,
+#author {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
 
-        gap: 10px;
+#btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#list {
+    list-style: none;
+}
+
+#list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#list p {
+    margin-right: 10px;
+}
+
+.finished {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+#message {
+    margin: 15px 0;
+    font-style: italic;
 }
