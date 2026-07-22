@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Collection Tracker</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form id="game-form">
+      <input type="text" id="game-name" placeholder="Write Your Game Name..." />
+
+      <select id="platform">
+        <option value="pc">PC</option>
+        <option value="playstation">Playstatin</option>
+        <option value="mobile">Mobile</option>
+        <option value="nintendo switch">Nintendo Switch</option>
+        <option value="xbox">xbox</option>
+      </select>
+
+      <button type="submit" id="addButton">Add Button</button>
+    </form>
+
+    <ul id="game-list"></ul>
+
+    <button id="clear-btn">Clear saved</button>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+let games = [];
+
+const form = document.querySelector("#game-form");
+const gameName = document.querySelector("#game-name");
+const platform = document.querySelector("#platform");
+const gameList = document.querySelector("#game-list");
+const clearBtn = document.querySelector("#clear-btn");
+
+function saveGames() {
+  localStorage.setItem("games", JSON.stringify(games));
+}
+
+function loadGames() {
+  const savedGames = localStorage.getItem("games");
+
+  if (savedGames) {
+    games = JSON.parse(savedGames);
+  } else {
+    games = [];
+  }
+}
+
+function render() {
+  gameList.innerHTML = "";
+
+  games.forEach((game) => {
+    const li = document.createElement("li");
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = game.completed;
+
+    checkbox.addEventListener("change", () => {
+      game.completed = checkbox.checked;
+      saveGames();
+      render();
+    });
+
+    const span = document.createElement("span");
+    span.textContent = `${game.name} (${game.platform})`;
+
+    if (game.completed) {
+      span.style.textDecoration = "line-through";
+    }
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+
+    deleteBtn.addEventListener("click", () => {
+      const isDelete = confirm("Delete this game?");
+
+      if (isDelete) {
+        games = games.filter((item) => item.id !== game.id);
+        saveGames();
+        render();
+      }
+    });
+
+    li.append(checkbox, span, deleteBtn);
+    gameList.appendChild(li);
+  });
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newGame = {
+    id: Date.now(),
+    name: gameName.value.trim(),
+    platform: platform.value,
+    completed: false,   
+  };
+
+  games.push(newGame);
+
+  saveGames();
+  render();
+
+  form.reset();
+});
+
+clearBtn.addEventListener("click", () => {
+  localStorage.removeItem("games");
+  games = [];
+  render();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadGames();
+  render();
+});
