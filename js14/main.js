@@ -46,15 +46,62 @@ function render() {
     checkbox.type = "checkbox";
     checkbox.checked = item.completed;
 
-    checkbox.addEventListener("change", () => {
-      toggleCompleted(item.id);
-    });
+    const deleted = document.createElement("button")
+    deleted.textContent = "Delete"
+
+    deleted.onclick = () => { deleteGame(item.id) }
+
+    checkbox.onclick = () => { toggleCompleted(item.id) };
 
     li.append(
       checkbox,
-      ` ${item.name} - ${item.platform}`
+      ` ${item.name} - ${item.platform}`,
+      deleted
     );
 
     list.appendChild(li);
   });
 }
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  const newGame = {
+    id: Date.now(),
+    name: gameName.value,
+    platform: platform.value,
+    completed: false
+  }
+
+  games.push(newGame)
+
+  saveGames()
+
+  render()
+
+  form.reset()
+})
+
+function deleteGame(id) {
+  if (confirm("Delete ?")) {
+    games = games.filter((item) => item.id !== id)
+
+    saveGames()
+    render()
+  }
+}
+
+clear.onclick = () => {
+  localStorage.removeItem("games")
+   
+  games = []
+
+  render()
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadGames()
+  render()
+})
+
+
